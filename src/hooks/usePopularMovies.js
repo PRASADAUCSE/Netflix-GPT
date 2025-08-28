@@ -4,6 +4,7 @@ import { API_Options } from "../Utils/constants";
 import { addPopularMovies } from "../Utils/moviesSlice";
 
 const usePopularMovies = async() => {
+  
     const dispatch = useDispatch();
 
     const getPopularMovies = async() => {

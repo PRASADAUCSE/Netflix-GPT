@@ -9,6 +9,7 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { addUser, removeUser } from "../Utils/userSlice";
 import { useNavigate } from "react-router-dom";
+import TrailerPage from "./TrailerPage";
 
 
 const Body = () =>{
@@ -29,6 +30,10 @@ const Body = () =>{
         {
             path: "/Browse",
             element: <Browse/>
+        },
+        {
+            path:"/trailer/:movieId",
+            element:<TrailerPage/>
         }
     ]);
 

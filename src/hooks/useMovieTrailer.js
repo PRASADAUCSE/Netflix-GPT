@@ -1,16 +1,28 @@
 import { useEffect, useState } from "react";
 import { API_Options } from "../Utils/constants";
-const useMovieTrailer = () => {
-    
-        const[trailerId, setTrailerId] = useState(null);
+import { useDispatch } from "react-redux";
+const useMovieTrailer = (movieId) => {
+
+    const dispatch = useDispatch();
+       const[trailerId, setTrailerId] = useState(null);
        const getMovieVideos = async() => {
-        const data = await fetch("https://api.themoviedb.org/3/movie/ 755898/videos", API_Options);
+        if(!movieId) return ;
+
+        const data = await fetch("https://api.themoviedb.org/3/movie/"+movieId+"/videos", API_Options);
         const json = await data.json();
-        const trailer = json.results[0];
-        // console.log(trailer);
-        // console.log(json);
+        console.log(json);
+        const trailer =
+        json.results.find((video) => video.type === "Trailer") ||
+        json.results.find((video) => video.type === "Teaser") ||
+        json.results[0];
+        
+        //console.log(trailer);
+        
         setTrailerId(trailer.key);
+
+        console.log("trailer id: " + trailer);
     }
+
 
     useEffect(() => {
         getMovieVideos();

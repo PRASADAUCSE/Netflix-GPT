@@ -10,3 +10,5 @@ export const IMG_CDN = "https://image.tmdb.org/t/p/w500";
 
 export const SUPPORTED_LANGUAGES = [{identifier: "en", name: "English"}, 
   {identifier: "hindi", name: "Hindi"}, {identifier: "telugu", name: "Telugu"}]
+
+export const OPENAI_KEY = "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";
