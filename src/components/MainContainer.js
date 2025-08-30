@@ -1,14 +1,13 @@
 import { useSelector } from "react-redux";
 import VideoBackground from "./VideoBackground";
 import VideoTitle from "./VideoTItle";
-import shimmer from "../Utils/shimmer";
 import Header from "./Header";
 
 const MainContainer = () => {
     const movies = useSelector((store) => store.movies?.nowPlayingMovies);
     // If movies array is null, undefined, or has less than 2 movies, return early.
     // We need at least two movies because mainMovie is set to movies[1].
-    if (!movies || movies.length < 2) return shimmer(); 
+    if (!movies || movies.length < 2) return null; 
 
     // Using the second movie (index 1) for the main display
     const mainMovie = movies[1];

@@ -12,16 +12,16 @@ const TrailerPage = () => {
   const [genres, setGenres] = useState([]);
   const [rating, setRating] = useState(null);
 
-  // Aggregate all movies from Redux, INCLUDING GPT suggested movies
+  
   const allMovies = [
     ...(useSelector((store) => store.movies.nowPlayingMovies) || []),
     ...(useSelector((store) => store.movies.popularMovies) || []),
     ...(useSelector((store) => store.movies.topRatedMovies) || []),
     ...(useSelector((store) => store.movies.upcomingMovies) || []),
-    ...(useSelector((store) => store.gpt.movieResults)?.flat() || []), // Flatten the array of arrays from GPT results
+    ...(useSelector((store) => store.gpt.movieResults)?.flat() || []), 
   ];
 
-  // Find the movie from the aggregated list
+  
   const movieFromRedux = allMovies.find((m) => m.id === parseInt(movieId));
 
   useEffect(() => {
