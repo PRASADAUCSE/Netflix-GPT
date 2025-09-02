@@ -1,13 +1,13 @@
 import { useSelector } from "react-redux";
 import MovieList from "./MovieList";
-import Shimmer from "../Utils/Shimmer";
+//import Shimmer from "../Utils/Shimmer.js";
 
 const GptMovieSuggestions = () => {
     const gpt = useSelector(store => store.gpt);
     const {movieResults, movieNames, isLoading} = gpt; // ✅ Get isLoading state
 
     // If we are currently loading, show the shimmer
-    if (isLoading) return <Shimmer/>;
+    //if (isLoading) return <Shimmer/>;
 
     // If not loading, check if there are movies to display
     if (!movieNames || movieNames.length === 0) return null; // Or a message like "No movies found."
