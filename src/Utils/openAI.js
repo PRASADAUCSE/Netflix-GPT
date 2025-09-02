@@ -1,13 +1,10 @@
-
-
 import OpenAI from 'openai';
+import { OPENAI_KEY } from './constants';
 
 const openai = new OpenAI({
-  // OpenRouter API Base URL
-  baseURL: "https://openrouter.ai/api/v1", 
-  // Your OpenRouter API key, securely loaded from environment variables
-  apiKey: process.env.REACT_APP_OPENAI_KEY, 
-  dangerouslyAllowBrowser: true,
+  apiKey: process.env.REACT_APP_OPENAI_API_KEY,
+  dangerouslyAllowBrowser: true, 
+  // No baseURL or defaultHeaders are needed for OpenAI
 });
 
 export default openai;
