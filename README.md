@@ -12,6 +12,7 @@ It allows users to discover movies using **natural language queries** powered by
 - Form validation
 - Firebase Authentication
 - Protected routes (access after login)
+- !image[this is authentication page]("https://github.com/PRASADAUCSE/Netflix-GPT/blob/main/Screenshot%202026-02-10%20071349.png?raw=true")
 
 ### 🎥 Movie Browsing
 - Fetches real-time movie data from **TMDB API**
